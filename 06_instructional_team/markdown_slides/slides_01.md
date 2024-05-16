@@ -43,7 +43,7 @@ $ echo "Data Sciences Institute"
 
 - UofT Computer Science and Statistics graduate, with minor in Mathematics
 - Co-op at Citi (Software Development) and BMO (Business Analytics)
-- RBC Capital Markets BSA using SQL for Salesforce CRM data, transitioning to Supervisory and Regulatory role soon
+- Machine Learning Engineering Intern at Shopify working on a Fine Tuned LLM for Product Taxonomy, previously RBC Capital Markets
 - Former Women in Computer Science president at UofT
 - Involved with Toronto Wxmen in Data Science and RWomen at RBC
 
@@ -147,9 +147,9 @@ $ echo "Data Sciences Institute"
 
 - Pass/Fail. Do the work, pass the course :) 
 
-- One Assignment: Data Model Design, 40%, due May 25
+- One Assignment: Data Model Design, 40%, due June 1
 
-- Homework: 48% (8% each), due on Thursdays and Saturdays
+- Homework: 48% (8% each), due on Thursdays, Fridays, Saturdays
 
 - Class Attendance: 12% (2% each)
   - Let myself or course support know if you are unable to attend a lesson
@@ -207,7 +207,7 @@ For live coding:
 - SQL: Structured Query Language
   - Pronounced as either S.Q.L. (ess-cue-ell) or “sequel”
 - SQL is a _query_ language rather than a programming language
-  - Querying is closer to telling a computer *what you want*, rather than *what is has to do*
+  - Querying is closer to telling a computer *what you want*, rather than *what it has to do*
   - SQL code is often less reproducible than other programming languages because it's domain specific
       - Some SQL code, especially more advanced procedural code, is reproducible within the same flavour
   - SQL's domain is databases and is based on set theory
