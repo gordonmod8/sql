@@ -76,9 +76,6 @@ WHERE z.visits = 1;
 /* 3. Using a COUNT() window function, include a value along with each row of the 
 customer_purchases table that indicates how many different times that customer has purchased that product_id. */
 
-
-
-
 -- String manipulations
 /* 1. Some product names in the product table have descriptions like "Jar" or "Organic". 
 These are separated from the product name with a hyphen. 
@@ -106,7 +103,5 @@ HINT: There are a possibly a few ways to do this query, but if you're struggling
 "best day" and "worst day"; 
 3) Query the second temp table twice, once for the best day, once for the worst day, 
 with a UNION binding them. */
-
-
 
 
