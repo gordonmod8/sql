@@ -10,6 +10,18 @@ How many customers are there (y).
 Before your final group by you should have the product of those two queries (x*y).  */
 
 
+SELECT stock_value, vendor_name, product_name, customer_first_name || ' ' || customer_last_name as customer
+FROM
+	(SELECT DISTINCT
+		vendor.vendor_name,
+		product.product_name,
+		vendor_inventory.original_price *5 as stock_value
+	FROM vendor_inventory
+	JOIN vendor
+	ON vendor_inventory.vendor_id = vendor.vendor_id
+	JOIN product
+	ON vendor_inventory.product_id = product.product_id)
+	CROSS JOIN customer;
 
 -- INSERT
 /*1.  Create a new table "product_units". 
@@ -17,19 +29,29 @@ This table will contain only products where the `product_qty_type = 'unit'`.
 It should use all of the columns from the product table, as well as a new column for the `CURRENT_TIMESTAMP`.  
 Name the timestamp column `snapshot_timestamp`. */
 
-
+DROP TABLE IF EXISTS temp.product_units;
+CREATE TEMP TABLE IF NOT EXISTS temp.product_units  as
+	SELECT *, CURRENT_TIMESTAMP as snapshot_timestamp 
+	FROM product
+	WHERE product_qty_type = "unit"
+;--CROSS JOIN CURRENT_TIMESTAMP as snapshot_timestamp;
+SELECT * FROM temp.product_units;
 
 /*2. Using `INSERT`, add a new row to the product_units table (with an updated timestamp). 
 This can be any product you desire (e.g. add another record for Apple Pie). */
 
-
+INSERT INTO temp.product_units
+VALUES(92,"Blue Jays Ice Cream Hat","1 scoop", 4,"unit",CURRENT_TIMESTAMP);
+SELECT * FROM temp.product_units;
 
 -- DELETE
 /* 1. Delete the older record for the whatever product you added. 
 
 HINT: If you don't specify a WHERE clause, you are going to have a bad time.*/
 
-
+DELETE FROM temp.product_units
+WHERE product_id = 92;
+SELECT * FROM temp.product_units;
 
 -- UPDATE
 /* 1.We want to add the current_quantity to the product_units table. 
